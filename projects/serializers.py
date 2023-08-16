@@ -29,10 +29,10 @@ class ClassroomSerializer(serializers.ModelSerializer):
 class TeacherSerializer(serializers.ModelSerializer):
     class Meta:
         model = Teacher
-        fields = ['id','name','last_name']
+        fields = '__all__'
 
 class ScheduleSerializer(serializers.ModelSerializer):
-    teacher = TeacherSerializer(many=True)
+    teacher = TeacherSerializer()
     class Meta:
         model = Schedule
         fields = '__all__'

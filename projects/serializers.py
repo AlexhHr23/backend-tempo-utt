@@ -32,7 +32,9 @@ class TeacherSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class ScheduleSerializer(serializers.ModelSerializer):
-    teacher = TeacherSerializer()
     class Meta:
         model = Schedule
         fields = '__all__'
+
+    def get_teacher_names(self, obj):
+        return [teacher.name for teacher in obj.teacher.all()]

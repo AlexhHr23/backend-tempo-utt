@@ -6,6 +6,11 @@ class SubjectSerializer(serializers.ModelSerializer):
         model = Subject
         fields = '__all__'
 
+class CareerSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Career
+        fields = '__all__'
+
 class GroupSerializer(serializers.ModelSerializer):
     class Meta:
         model = Group
@@ -38,3 +43,8 @@ class ScheduleSerializer(serializers.ModelSerializer):
 
     def get_teacher_names(self, obj):
         return [teacher.name for teacher in obj.teacher.all()]
+
+class StudentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Student
+        fields = '__all__'

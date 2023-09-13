@@ -7,6 +7,11 @@ class SubjectViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.AllowAny]
     serializer_class = SubjectSerializer
 
+class CareerViewSet(viewsets.ModelViewSet):
+    queryset = Career.objects.all()
+    permission_classes = [permissions.AllowAny]
+    serializer_class = CareerSerializer
+
 class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     permission_classes = [permissions.AllowAny]
@@ -36,3 +41,8 @@ class ScheduleViewSet(viewsets.ModelViewSet):
     queryset = Schedule.objects.all()
     permission_classes = [permissions.AllowAny]
     serializer_class = ScheduleSerializer
+    
+class StudentViewSet(viewsets.ModelViewSet):
+    queryset = Student.objects.all()
+    permission_classes = [permissions.AllowAny]
+    serializer_class = StudentSerializer
